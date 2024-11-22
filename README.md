@@ -66,7 +66,7 @@ src/
 ├── service-worker.js               
 ├──serviceWorkerRegistration.js               
 ├── store.js               # redux store file 
-
+```
 
 ## Key Components
 
