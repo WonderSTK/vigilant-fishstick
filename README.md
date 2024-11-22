@@ -91,24 +91,24 @@ The application uses Redux for state management, with the following slices:
 ## Installation and Setup
 
 1. Clone the repository:
-   \`\`\`
+   ```
    git clone https://github.com/WonderSTK/vigilant-fishstick.git
-   \`\`\`
+   ```
 
 2. Navigate to the project directory:
-   \`\`\`
+   ```
    cd dashboard-project
-   \`\`\`
+   ```
 
 3. Install dependencies:
-   \`\`\`
+   ```
    npm install
-   \`\`\`
+   ```
 
 4. Start the development server:
-   \`\`\`
+   ```
    npm start
-   \`\`\`
+   ```
 
 ## Usage Guide
 
