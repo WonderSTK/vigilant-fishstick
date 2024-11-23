@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 body {
-  background-color: #696FFB;
+  background-color: #ffffff;
   color: #ffffff; /* Ensure text color is readable on the new background */
   font-family: 'Roboto', sans-serif; 
 }
