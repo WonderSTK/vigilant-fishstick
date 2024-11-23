@@ -6,10 +6,10 @@ const RegisteredUsers = ({ data }) => {
   const premiumPercentage = (premium / total) * 100;
 
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Registered Users</h2>
-      <div className="flex items-center justify-center">
-        <div className="relative w-56 h-56">
+    <div className="bg-white rounded-lg shadow p-4 lg:p-6 h-full">
+      <h2 className="text-lg font-semibold text-gray-900 mb-2 lg:mb-4">Registered Users</h2>
+      <div className="flex items-center justify-center flex-1">
+        <div className="relative w-40 h-40 lg:w-56 lg:h-56">
           <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
             <path
               d="M18 2.0845
@@ -30,27 +30,26 @@ const RegisteredUsers = ({ data }) => {
             />
           </svg>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <img src={RegUser} alt="User Icon" className="w-10 h-10 mb-2 mx-auto" />
-            <p className="text-3xl font-bold text-gray-900">{total}</p>
-            <p className="text-sm text-gray-500">Total users</p>
+            <img src={RegUser} alt="User Icon" className="w-8 h-8 lg:w-10 lg:h-10 mb-1 lg:mb-2 mx-auto" />
+            <p className="text-2xl lg:text-3xl font-bold text-gray-900">{total}</p>
+            <p className="text-xs lg:text-sm text-gray-500">Total users</p>
           </div>
         </div>
       </div>
-      <div className="flex justify-between mt-6">
+      <div className="flex justify-between mt-4 lg:mt-6">
         <div className="flex items-center">
-          <div className="bg-blue-500 w-1 h-8 mr-2"></div>
+          <div className="bg-blue-500 w-1 h-6 lg:h-8 mr-2"></div>
           <div>
-            <p className="text-lg font-semibold text-gray-900">{premium}</p>
-            <p className="text-sm font-medium text-gray-500">Premium Users</p>
+            <p className="text-base lg:text-lg font-semibold text-gray-900">{premium}</p>
+            <p className="text-xs lg:text-sm font-medium text-gray-500">Premium Users</p>
           </div>
         </div>
         <div className="flex items-center">
-          
           <div className="text-right pr-2">
-            <p className="text-lg font-semibold text-gray-900">{basic}</p>
-            <p className="text-sm font-medium text-gray-500">Basic Users</p>
+            <p className="text-base lg:text-lg font-semibold text-gray-900">{basic}</p>
+            <p className="text-xs lg:text-sm font-medium text-gray-500">Basic Users</p>
           </div>
-          <div className="bg-blue-500 w-1 h-8 mr-2"></div>
+          <div className="bg-blue-500 w-1 h-6 lg:h-8 mr-2"></div>
         </div>
       </div>
     </div>
@@ -58,4 +57,3 @@ const RegisteredUsers = ({ data }) => {
 };
 
 export default RegisteredUsers;
-

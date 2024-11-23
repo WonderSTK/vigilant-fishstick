@@ -82,6 +82,11 @@ function SalesOverview({ data }) {
           },
         },
       },
+      verticalLine: {
+        drawTime: 'beforeDatasetsDraw',
+        lineColor: 'rgba(0, 0, 0, 0.1)',
+        lineWidth: 1,
+      },
     },
     scales: {
       x: {
@@ -124,13 +129,35 @@ function SalesOverview({ data }) {
     },
     layout: {
       padding: {
-        top: 20,
-        right: 20,
+        top: 10,
+        right: 10,
         bottom: 10,
         left: 10,
       },
     },
   }
+
+  // Custom plugin to draw vertical dashed line
+  const verticalLinePlugin = {
+    id: 'verticalLine',
+    afterDraw: (chart) => {
+      if (chart.tooltip._active && chart.tooltip._active.length) {
+        const ctx = chart.ctx;
+        ctx.save();
+        const activePoint = chart.tooltip._active[0];
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]);
+        ctx.moveTo(activePoint.element.x, chart.chartArea.top);
+        ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+  };
+
+  ChartJS.register(verticalLinePlugin);
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-100 w-full lg:w-[915.5px] h-auto lg:h-[299px]">
@@ -140,17 +167,21 @@ function SalesOverview({ data }) {
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-6">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-blue-500" />
-              <span className="text-sm text-gray-600">Total Revenue</span>
-              <span className="text-sm font-semibold text-gray-900">${totalRevenue.toLocaleString()}</span>
+              <div className="flex flex-col">
+                <span className="text-sm text-gray-600">Total Revenue</span>
+                <span className="text-sm font-semibold text-gray-900">${totalRevenue.toLocaleString()}</span>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-orange-500" />
-              <span className="text-sm text-gray-600">Total Target</span>
-              <span className="text-sm font-semibold text-gray-900">${totalTarget.toLocaleString()}</span>
+              <div className="flex flex-col">
+                <span className="text-sm text-gray-600">Total Target</span>
+                <span className="text-sm font-semibold text-gray-900">${totalTarget.toLocaleString()}</span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="h-[200px] lg:h-[215px] w-full relative">
+        <div className="h-[150px] lg:h-[180px] w-full relative">
           <div
             className="absolute inset-0 w-full"
             style={{

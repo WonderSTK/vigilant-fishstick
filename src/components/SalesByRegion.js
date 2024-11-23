@@ -19,8 +19,8 @@ export function SalesByRegion({ data }) {
       {
         label: "Sales by Region",
         data: Object.values(data),
-        backgroundColor: "rgba(99, 102, 241, 0.1)", // Light indigo background
-        borderColor: "rgb(99, 102, 241)", // Indigo border
+        backgroundColor: "rgba(99, 102, 241, 0.1)",
+        borderColor: "rgb(99, 102, 241)",
         borderWidth: 1.5,
         pointBackgroundColor: "rgb(99, 102, 241)",
         pointBorderColor: "#fff",
@@ -39,14 +39,14 @@ export function SalesByRegion({ data }) {
       r: {
         beginAtZero: true,
         grid: {
-          color: "rgba(99, 102, 241, 0.1)", // Light indigo grid
+          color: "rgba(99, 102, 241, 0.1)",
           lineWidth: 1,
         },
         angleLines: {
-          color: "rgba(99, 102, 241, 0.1)", // Light indigo angle lines
+          color: "rgba(99, 102, 241, 0.1)",
         },
         ticks: {
-          display: false, // Hide the radial ticks
+          display: false,
           maxTicksLimit: 1,
         },
         pointLabels: {
@@ -86,7 +86,7 @@ export function SalesByRegion({ data }) {
   };
 
   return (
-    <div className="bg-white rounded-lg lg:ml-60 shadow-sm border border-gray-100 w-full lg:w-[444px] h-[299px]">
+    <div className="bg-white rounded-lg shadow-sm border border-gray-100 w-full h-full">
       <div className="p-4 h-full">
         <h2 className="text-lg font-semibold text-gray-900 mb-2">Sales by Region</h2>
         <div className="h-[235px] w-full">
@@ -98,3 +98,4 @@ export function SalesByRegion({ data }) {
 }
 
 export default SalesByRegion;
+

@@ -10,24 +10,25 @@ const IntegrationList = ({ data }) => {
     logo3,
   ];
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">
+    <div className="bg-white rounded-lg shadow p-4 lg:p-6 h-full">
+      <h2 className="text-lg font-semibold text-gray-900 mb-2 lg:mb-4">
         List of Integrations
       </h2>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto flex-1">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-2 lg:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <input type="checkbox" className="mr-2" />
                 Application
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-2 lg:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Type
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-2 lg:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Rate
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-2 lg:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Profit
               </th>
             </tr>
@@ -35,28 +36,28 @@ const IntegrationList = ({ data }) => {
           <tbody className="bg-white divide-y divide-gray-200">
             {data.map((integration, index) => (
               <tr key={index}>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 lg:px-6 py-2 lg:py-4 whitespace-nowrap">
                   <div className="flex items-center">
-                    <div className="flex-shrink-0 h-10 w-10">
-                      {/* Replace with actual logos */}
-                      <img src={logos[index]} alt={`${integration.name} Logo`} className="h-10 w-10 rounded-full" />
+                    <input type="checkbox" className="mr-2" />
+                    <div className="flex-shrink-0 h-8 w-8 lg:h-10 lg:w-10">
+                      <img src={logos[index]} alt={`${integration.name} Logo`} className="h-8 w-8 lg:h-10 lg:w-10 rounded-full" />
                     </div>
-                    <div className="ml-4">
+                    <div className="ml-2 lg:ml-4">
                       <div className="text-sm font-medium text-gray-900">
                         {integration.name}
                       </div>
                     </div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 lg:px-6 py-2 lg:py-4 whitespace-nowrap">
                   <div className="text-sm text-gray-500">
                     {integration.type}
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <td className="px-4 lg:px-6 py-2 lg:py-4 whitespace-nowrap">
+                  <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-blue-600 h-2.5 rounded-full"
+                      className="bg-blue-600 h-2 rounded-full"
                       style={{ width: `${integration.rate}%` }}
                     ></div>
                   </div>
@@ -64,7 +65,7 @@ const IntegrationList = ({ data }) => {
                     {integration.rate}%
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td className="px-4 lg:px-6 py-2 lg:py-4 whitespace-nowrap text-sm text-gray-500">
                   ${integration.profit.toLocaleString()}
                 </td>
               </tr>
@@ -77,4 +78,3 @@ const IntegrationList = ({ data }) => {
 };
 
 export default IntegrationList;
-

@@ -30,6 +30,8 @@ The React Dashboard Project is a comprehensive, responsive web application desig
 - **User Statistics**: Provides a visual breakdown of registered users, distinguishing between premium and basic subscribers.
 - **Integration Tracking**: Displays a list of integrated applications along with their performance metrics and generated profits.
 - **Skeletons and Shimmer UI**: Implements loading placeholders with a shimmer effect for an improved user experience during data fetching.
+- **Redux Store Persistence**: Save the selected country in redux store to retain selection
+on page reload.
 
 ## Technology Stack
 
