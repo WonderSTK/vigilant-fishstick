@@ -31,6 +31,7 @@ The React Dashboard Project is a comprehensive, responsive web application desig
 - **Skeletons and Shimmer UI**: Implements loading placeholders with a shimmer effect for an improved user experience during data fetching.
 - **Redux Store Persistence**: Save the selected country in redux store to retain selection
 on page reload.
+- **Spinner Loader**: Added a progress bar loader, providing a visually appealing loading indicator during data fetching.
 
 ## Technology Stack
 

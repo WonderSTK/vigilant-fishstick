@@ -16,4 +16,11 @@ body {
 .accent {
   color: #3b82f6;
 }
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
 
+.animate-progress {
+  animation: progress 2s infinite;
+}

@@ -9,6 +9,7 @@ import SalesByRegion from './SalesByRegion';
 import RegisteredUsers from './RegisteredUsers';
 import IntegrationList from './IntegrationList';
 import { StatCardSkeleton, ChartSkeleton, RegisteredUsersSkeleton, IntegrationListSkeleton } from './Skeletons';
+import Spinner from './Spinner'; // Import the Spinner component
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const Dashboard = () => {
       <Sidebar expanded={sidebarExpanded} setExpanded={setSidebarExpanded} />
       <div className={`flex-1 flex flex-col transition-all duration-300 ${sidebarExpanded ? 'ml-40' : 'ml-16'}`}>
         <TopBar />
+        {loading && <Spinner />} {/* Conditionally render the spinner */}
         <div className="p-4 lg:p-6 flex-1 overflow-auto">
           {loading ? (
             <div className="space-y-4 lg:space-y-6">
