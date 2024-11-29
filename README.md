@@ -25,7 +25,6 @@ The React Dashboard Project is a comprehensive, responsive web application desig
 - **Interactive Data Visualization**: Utilizes Chart.js to create dynamic, interactive charts for sales data and regional performance analysis.
 - **Real-time Data Updates**: Simulates real-time data fetching and updates to provide the most current information.
 - **Country-specific Data**: Allows users to switch between different countries to view region-specific metrics and performance data.
-- **Theme Customization**: Includes a light/dark mode toggle for user preference and improved readability in different environments.
 - **Comprehensive Metrics Display**: Showcases key business metrics including total income, profit, total views, and conversion rates.
 - **User Statistics**: Provides a visual breakdown of registered users, distinguishing between premium and basic subscribers.
 - **Integration Tracking**: Displays a list of integrated applications along with their performance metrics and generated profits.
